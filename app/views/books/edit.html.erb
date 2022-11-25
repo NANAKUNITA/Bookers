@@ -1,0 +1,19 @@
+<h1>Editing Book</h1>
+<% if @book.errors.any? %>
+ <%=@book.errors.count %>件のエラーが発生しました
+ <ul>
+ <% @book.errors.full_messages.each do |message| %>
+ <li><%=message %></li>
+ </ul>
+ <% end %>
+
+ <%=form_with model :Book.new do |f| %>
+ <div class="text-area">
+   <div>Body</div>
+   <%= f.text_area :body%>
+ </div>
+
+ <div class="text-submit">
+   <%= f.submit 'Update Book' %>
+ </div>
+<% end %>
