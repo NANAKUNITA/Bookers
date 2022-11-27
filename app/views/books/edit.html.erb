@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice]%>
+</div>
+
 <h1>
  <strong>Editing Book</strong>
 </h1>
@@ -18,12 +22,6 @@
     <%= f.text_area :body %>
     <%= f.submit 'Update Book' %>
   <% end %>
-<%= link_to "Show", book_path(@book.id) %>
+<%= link_to "Show", book_path(@book) %>
 |
-<%= link_to "Back", books_path(@book) %>
-
-<% if flash[:notice] %>
-  <p id="notice">
-    <%= flash[:notice] %>
-  </p>
-<% end %>
+<%= link_to "Back", books_path %>
