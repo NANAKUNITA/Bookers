@@ -15,7 +15,7 @@
          <td class="posted-body"><%= book.body %></td>
          <td class="link-show"><%= link_to "Show", book_path(book.id) %></td>
          <td class="link-edit"><%= link_to "Edit", edit_book_path(book.id) %></td>
-         <td class="link-destroy"><%= link_to "Destroy", book, method: :delete, "data-confirm"=>"Are you sure?" %></td>
+         <td class="link-destroy"><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm"=>"Are you sure?" %></td>
       </tr>
       <% end %>
      </tbody>
@@ -31,7 +31,6 @@
  </ul>
 <% end %>
 <%= form_with model:@book, local:true do |f| %>
-
 <h4>Title</h4>
  <%= f.text_field :title %>
 

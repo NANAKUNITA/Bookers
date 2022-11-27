@@ -21,3 +21,9 @@
 <%= link_to "Show", book_path(@book.id) %>
 |
 <%= link_to "Back", books_path(@book) %>
+
+<% if flash[:notice] %>
+  <p id="notice">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
